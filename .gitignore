@@ -11,6 +11,9 @@
 npm-debug.log
 yarn-error.log
 
+# Kiro
+/.kiro
+
 # IDEs and editors
 .idea/
 .project
