@@ -20,4 +20,10 @@ import { Routes } from '@angular/router';
  *       import('./features/catalog/catalog-page').then((m) => m.CatalogPage),
  *   }
  */
-export const routes: Routes = [];
+export const routes: Routes = [
+  {
+    path: '',
+    loadComponent: () =>
+      import('./features/catalog/catalog-page').then((m) => m.CatalogPage),
+  },
+];
