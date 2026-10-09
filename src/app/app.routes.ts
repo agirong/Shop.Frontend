@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { authGuard } from './core/guards/auth.guard';
 
 /**
  * Rutas de la aplicación.
@@ -40,5 +41,11 @@ export const routes: Routes = [
     path: 'register',
     loadComponent: () =>
       import('./features/auth/register-page').then((m) => m.RegisterPage),
+  },
+  {
+    path: 'checkout',
+    loadComponent: () =>
+      import('./features/checkout/checkout-page').then((m) => m.CheckoutPage),
+    canActivate: [authGuard],
   },
 ];
