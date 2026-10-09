@@ -36,7 +36,7 @@ const MIN_PASSWORD_LENGTH = 8;
     <main class="mx-auto max-w-md px-4 py-10">
       <h1 class="mb-6 text-2xl font-bold text-gray-900">Crear una cuenta</h1>
 
-      <form class="flex flex-col gap-5" (submit)="onSubmit($event)" novalidate>
+      <form class="flex flex-col gap-5" (submit)="onSubmit($event)" novalidate aria-label="Registro de cuenta">
         @if (submitError()) {
           <p
             class="rounded-md border border-red-200 bg-red-50 p-3 text-sm text-red-800"

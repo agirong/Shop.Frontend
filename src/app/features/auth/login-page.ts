@@ -27,7 +27,7 @@ import { AuthService } from './auth.service';
     <main class="mx-auto max-w-md px-4 py-10">
       <h1 class="mb-6 text-2xl font-bold text-gray-900">Iniciar sesión</h1>
 
-      <form class="flex flex-col gap-5" (submit)="onSubmit($event)" novalidate>
+      <form class="flex flex-col gap-5" (submit)="onSubmit($event)" novalidate aria-label="Iniciar sesión">
         @if (justRegistered()) {
           <p
             class="rounded-md border border-green-200 bg-green-50 p-3 text-sm text-green-800"

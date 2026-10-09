@@ -28,49 +28,59 @@ import { CartSummary } from '../../features/cart/cart-summary';
         </a>
 
         <!-- Enlaces de navegación -->
-        <div class="flex items-center gap-1 sm:gap-2">
+        <ul class="flex items-center gap-1 sm:gap-2" role="list">
           <!-- Catálogo -->
-          <a
-            routerLink="/"
-            routerLinkActive="bg-gray-100"
-            [routerLinkActiveOptions]="{ exact: true }"
-            class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700"
-          >
-            Catálogo
-          </a>
+          <li>
+            <a
+              routerLink="/"
+              routerLinkActive="bg-gray-100"
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700"
+            >
+              Catálogo
+            </a>
+          </li>
 
           <!-- Carrito (mini-resumen) -->
-          <app-cart-summary />
+          <li>
+            <app-cart-summary />
+          </li>
 
           <!-- Sesión -->
           @if (auth.isAuthenticated()) {
-            <span class="hidden text-sm text-gray-600 sm:inline">
+            <li class="hidden text-sm text-gray-600 sm:list-item" aria-hidden="true">
               {{ auth.currentUser()?.email }}
-            </span>
-            <button
-              type="button"
-              (click)="onLogout()"
-              class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700"
-            >
-              Cerrar sesión
-            </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                (click)="onLogout()"
+                class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700"
+              >
+                Cerrar sesión
+              </button>
+            </li>
           } @else {
-            <a
-              routerLink="/login"
-              routerLinkActive="bg-gray-100"
-              class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700"
-            >
-              Iniciar sesión
-            </a>
-            <a
-              routerLink="/register"
-              routerLinkActive="bg-gray-100"
-              class="rounded-md bg-blue-600 px-3 py-2 text-sm font-medium text-white hover:bg-blue-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700"
-            >
-              Registrarse
-            </a>
+            <li>
+              <a
+                routerLink="/login"
+                routerLinkActive="bg-gray-100"
+                class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700"
+              >
+                Iniciar sesión
+              </a>
+            </li>
+            <li>
+              <a
+                routerLink="/register"
+                routerLinkActive="bg-gray-100"
+                class="rounded-md bg-blue-600 px-3 py-2 text-sm font-medium text-white hover:bg-blue-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700"
+              >
+                Registrarse
+              </a>
+            </li>
           }
-        </div>
+        </ul>
       </nav>
     </header>
   `,

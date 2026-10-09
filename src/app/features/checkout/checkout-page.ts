@@ -106,7 +106,7 @@ import { OrderService } from './order.service';
         </section>
 
         <!-- Formulario de envío y confirmación -->
-        <form class="flex flex-col gap-5" (submit)="onSubmit($event)" novalidate>
+        <form class="flex flex-col gap-5" (submit)="onSubmit($event)" novalidate aria-label="Datos de envío">
           @if (submitError()) {
             <p
               class="rounded-md border border-red-200 bg-red-50 p-3 text-sm text-red-800"
