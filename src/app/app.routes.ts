@@ -48,4 +48,5 @@ export const routes: Routes = [
       import('./features/checkout/checkout-page').then((m) => m.CheckoutPage),
     canActivate: [authGuard],
   },
+  { path: '**', redirectTo: '' },
 ];
